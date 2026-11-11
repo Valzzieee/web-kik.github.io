@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Komputer | SMK Brantas Karangkates</title>
+    <meta name="description" content="Denah dan kondisi komputer di lab.">
+    <link rel="icon" href="img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="lab">
+
+    <header class="site-header">
+        <div class="wrap header-in">
+            <a class="brand" href="index.html">
+                <img src="img/logo.png" alt="" width="44" height="44">
+                <span class="brand-text">
+                    <strong>Pelaporan Komputer</strong>
+                    <small>SMK Brantas Karangkates</small>
+                </span>
+            </a>
+            <nav class="nav" aria-label="Menu utama">
+                <a href="index.html">Beranda</a>
+                <a href="list.html" aria-current="page">Lihat</a>
+                <a href="form.html" class="nav-cta">Lapor</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap lab-layout">
+            <aside class="lab-side">
+                <div>
+                    <a class="btn btn-ghost" href="list.html">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+                        Kembali
+                    </a>
+                </div>
+                <div>
+                    <h1 id="labTitle">Lab 1</h1>
+                    <p class="lab-count" id="labCount"></p>
+                </div>
+                <div class="filters" id="filters" role="group" aria-label="Sorot komputer berdasarkan kondisi"></div>
+                <div class="lab-switch" id="labSwitch"></div>
+            </aside>
+
+            <section aria-label="Denah komputer">
+                <div class="room">
+                    <div class="plan enter" id="plan"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <dialog id="pcDialog" class="pc-dialog" aria-labelledby="pcTitle">
+        <div class="pc-card" id="pcCard" data-status="baik">
+            <button type="button" class="pc-close" id="pcClose" aria-label="Tutup">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+            <h2 class="pc-title"><span id="pcTitle">Komputer 1</span><span class="pc-dot" aria-hidden="true"></span></h2>
+            <p class="pc-sub" id="pcLab">Lab 1</p>
+            <dl>
+                <div class="pc-field">
+                    <dt>Kondisi</dt>
+                    <dd><span class="pc-status" id="pcStatus">Baik</span></dd>
+                </div>
+                <div class="pc-field">
+                    <dt>Keterangan</dt>
+                    <dd class="pc-note" id="pcNote"></dd>
+                </div>
+            </dl>
+            <div class="pc-actions">
+                <button type="button" class="pc-step" id="pcPrev" aria-label="Komputer sebelumnya">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+                </button>
+                <button type="button" class="pc-step" id="pcNext" aria-label="Komputer berikutnya">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                </button>
+                <a class="btn" id="pcReport" href="form.html">Laporkan komputer ini</a>
+            </div>
+        </div>
+    </dialog>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="f-brand">
+                    <img src="img/logo.png" alt="" width="52" height="52">
+                    <div>
+                        <strong>SMK Brantas Karangkates</strong>
+                        <p>Pelaporan kondisi komputer laboratorium. Satu laporan dari kamu membantu teknisi menemukan masalah lebih cepat.</p>
+                    </div>
+                </div>
+                <div>
+                    <h2>Menu</h2>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="list.html">Lihat kondisi lab</a></li>
+                        <li><a href="form.html">Buat laporan kerusakan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Arti warna</h2>
+                    <ul class="f-legend">
+                        <li><span class="swatch baik"></span>Hijau: baik, siap dipakai</li>
+                        <li><span class="swatch diperbaiki"></span>Kuning: sedang diperbaiki</li>
+                        <li><span class="swatch rusak"></span>Merah: rusak</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bottom">&copy; <span id="year">2026</span> SMK Brantas Karangkates, Malang. Seluruh hak cipta dilindungi.</div>
+        </div>
+    </footer>
+    <script src="data.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

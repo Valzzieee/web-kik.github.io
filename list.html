@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Lab Komputer | SMK Brantas Karangkates</title>
+    <meta name="description" content="Pilih lab komputer untuk melihat kondisi setiap komputer.">
+    <link rel="icon" href="img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="list">
+
+    <header class="site-header">
+        <div class="wrap header-in">
+            <a class="brand" href="index.html">
+                <img src="img/logo.png" alt="" width="44" height="44">
+                <span class="brand-text">
+                    <strong>Pelaporan Komputer</strong>
+                    <small>SMK Brantas Karangkates</small>
+                </span>
+            </a>
+            <nav class="nav" aria-label="Menu utama">
+                <a href="index.html">Beranda</a>
+                <a href="list.html" aria-current="page">Lihat</a>
+                <a href="form.html" class="nav-cta">Lapor</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+            <div class="page-head">
+                <h1>Daftar Lab Komputer</h1>
+                <p>Pilih lab untuk melihat kondisi tiap komputer. Garis di sebelah kanan menunjukkan perbandingan komputer yang baik, diperbaiki, dan rusak.</p>
+            </div>
+            <ul id="labList" class="lab-list"></ul>
+            <p class="hint-line">Menemukan komputer yang bermasalah? <a href="form.html">Buat laporan</a></p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="f-brand">
+                    <img src="img/logo.png" alt="" width="52" height="52">
+                    <div>
+                        <strong>SMK Brantas Karangkates</strong>
+                        <p>Pelaporan kondisi komputer laboratorium. Satu laporan dari kamu membantu teknisi menemukan masalah lebih cepat.</p>
+                    </div>
+                </div>
+                <div>
+                    <h2>Menu</h2>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="list.html">Lihat kondisi lab</a></li>
+                        <li><a href="form.html">Buat laporan kerusakan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Arti warna</h2>
+                    <ul class="f-legend">
+                        <li><span class="swatch baik"></span>Hijau: baik, siap dipakai</li>
+                        <li><span class="swatch diperbaiki"></span>Kuning: sedang diperbaiki</li>
+                        <li><span class="swatch rusak"></span>Merah: rusak</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bottom">&copy; <span id="year">2026</span> SMK Brantas Karangkates, Malang. Seluruh hak cipta dilindungi.</div>
+        </div>
+    </footer>
+    <script src="data.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

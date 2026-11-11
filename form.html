@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Laporan Kerusakan | SMK Brantas Karangkates</title>
+    <meta name="description" content="Laporkan komputer lab yang rusak atau bermasalah.">
+    <link rel="icon" href="img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="form">
+
+    <header class="site-header">
+        <div class="wrap header-in">
+            <a class="brand" href="index.html">
+                <img src="img/logo.png" alt="" width="44" height="44">
+                <span class="brand-text">
+                    <strong>Pelaporan Komputer</strong>
+                    <small>SMK Brantas Karangkates</small>
+                </span>
+            </a>
+            <nav class="nav" aria-label="Menu utama">
+                <a href="index.html">Beranda</a>
+                <a href="list.html">Lihat</a>
+                <a href="form.html" class="nav-cta" aria-current="page">Lapor</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap form-wrap">
+            <a class="back-link" href="index.html">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+                Kembali ke beranda
+            </a>
+
+            <!-- ===== FORM ===== -->
+            <div id="main-content">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>Form Laporan Kerusakan</h1>
+                        <p>Isi data di bawah ini. Laporanmu akan diteruskan ke teknisi lab.</p>
+                    </div>
+
+                    <form id="laporanForm">
+                        <div id="formError" class="form-error" role="alert"></div>
+
+                        <div class="row-2">
+                            <div class="form-group">
+                                <label for="nama">Nama</label>
+                                <input type="text" id="nama" name="nama" placeholder="Nama lengkap" autocomplete="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="kelas">Kelas</label>
+                                <input type="text" id="kelas" name="kelas" placeholder="Contoh: XI RPL 1" required>
+                            </div>
+                        </div>
+
+                        <div class="row-2">
+                            <div class="form-group">
+                                <label for="lab">Lab yang mengalami kerusakan</label>
+                                <select id="lab" name="lab" required>
+                                    <option value="" disabled selected>Pilih lab</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="nomorKomputer">Nomor komputer</label>
+                                <input type="number" id="nomorKomputer" name="nomorKomputer" inputmode="numeric" min="1" max="40" placeholder="1 sampai 40" required>
+                            </div>
+                        </div>
+                        <div id="pcHint" class="pc-hint" data-status="baik" aria-live="polite"><i></i><span></span></div>
+
+                        <div class="form-group">
+                            <label for="kerusakan">Kerusakan yang ingin dilaporkan</label>
+                            <textarea id="kerusakan" name="kerusakan" placeholder="Contoh: Monitor tidak menyala walau kabel sudah dicek." required></textarea>
+                        </div>
+
+                        <fieldset class="form-group">
+                            <legend>Kondisi kerusakan</legend>
+                            <div class="choice-row">
+                                <label class="choice ringan">
+                                    <input type="radio" name="kondisi" value="Ringan" required>
+                                    <span><b>Ringan</b><small>Masih bisa dipakai</small></span>
+                                </label>
+                                <label class="choice sedang">
+                                    <input type="radio" name="kondisi" value="Sedang">
+                                    <span><b>Sedang</b><small>Mengganggu pemakaian</small></span>
+                                </label>
+                                <label class="choice parah">
+                                    <input type="radio" name="kondisi" value="Parah">
+                                    <span><b>Parah</b><small>Tidak bisa dipakai</small></span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <button type="submit" class="btn btn-submit" id="btnSubmit">Kirim laporan</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ===== HALAMAN BERHASIL ===== -->
+            <div id="success-page" hidden>
+                <div class="card success" tabindex="-1" id="successCard">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="4 12 10 18 20 6"></polyline></svg>
+                    </div>
+                    <h2>Laporan terkirim</h2>
+                    <p>Terima kasih. Tim teknisi akan memeriksa komputer yang kamu laporkan.</p>
+                    <dl class="receipt" id="receipt"></dl>
+                    <div class="success-actions">
+                        <a href="#" class="btn" id="btnKembali">Laporkan komputer lain</a>
+                        <a href="list.html" class="btn btn-ghost">Lihat kondisi lab</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="f-brand">
+                    <img src="img/logo.png" alt="" width="52" height="52">
+                    <div>
+                        <strong>SMK Brantas Karangkates</strong>
+                        <p>Pelaporan kondisi komputer laboratorium. Satu laporan dari kamu membantu teknisi menemukan masalah lebih cepat.</p>
+                    </div>
+                </div>
+                <div>
+                    <h2>Menu</h2>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="list.html">Lihat kondisi lab</a></li>
+                        <li><a href="form.html">Buat laporan kerusakan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Arti warna</h2>
+                    <ul class="f-legend">
+                        <li><span class="swatch baik"></span>Hijau: baik, siap dipakai</li>
+                        <li><span class="swatch diperbaiki"></span>Kuning: sedang diperbaiki</li>
+                        <li><span class="swatch rusak"></span>Merah: rusak</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f-bottom">&copy; <span id="year">2026</span> SMK Brantas Karangkates, Malang. Seluruh hak cipta dilindungi.</div>
+        </div>
+    </footer>
+    <script src="data.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
